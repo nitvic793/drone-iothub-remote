@@ -786,6 +786,13 @@ namespace DeviceExplorer
             MonitorEventHubAsync(DateTime.Now, ctsForDataMonitoring.Token, groupNameTextBox.Text);
         }
 
+        private void ProcessingButton_Click(object sender, EventArgs e)
+        {
+            GPSData sourceGps = new GPSData() { Latitude = Double.Parse(LatitudeCurrentTextBox.Text), Longitude = Double.Parse(LongitudeCurrentTextBox.Text) };
+            GPSData newGps = new GPSData() { Latitude = Double.Parse(LatitudeNewTextBox.Text), Longitude = Double.Parse(LongitudeNewTextBox.Text) };
+            MagnetoData currentMagneto = new MagnetoData() { MX = Double.Parse(MxCurrentTextBox.Text), MY = Double.Parse(MyCurrentTextBox.Text), MZ = Double.Parse(MzCurrentTextBox.Text), Declination = Double.Parse(DeclinationCurrentTextBox.Text) };
+        }
+
         #endregion
 
         #region Common
@@ -964,9 +971,7 @@ namespace DeviceExplorer
             }
         }
 
-      
-
-        
+       
     }
 
     #endregion

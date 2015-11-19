@@ -138,6 +138,8 @@
             this.ehStringToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.label27 = new System.Windows.Forms.Label();
+            this.LongitudeNewTextBox = new System.Windows.Forms.TextBox();
+            this.LatitudeNewTextBox = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -1010,6 +1012,8 @@
             // 
             // autoPilotModePanel
             // 
+            this.autoPilotModePanel.Controls.Add(this.LatitudeNewTextBox);
+            this.autoPilotModePanel.Controls.Add(this.LongitudeNewTextBox);
             this.autoPilotModePanel.Controls.Add(this.label27);
             this.autoPilotModePanel.Controls.Add(this.DeclinationCurrentTextBox);
             this.autoPilotModePanel.Controls.Add(this.label21);
@@ -1188,6 +1192,7 @@
             this.ProcessingButton.TabIndex = 2;
             this.ProcessingButton.Text = "Process path";
             this.ProcessingButton.UseVisualStyleBackColor = true;
+            this.ProcessingButton.Click += new System.EventHandler(this.ProcessingButton_Click);
             // 
             // autoPilotModeRadioButton
             // 
@@ -1459,10 +1464,30 @@
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.Location = new System.Drawing.Point(66, 187);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(135, 25);
+            this.label27.Size = new System.Drawing.Size(171, 25);
             this.label27.TabIndex = 26;
-            this.label27.Text = "Current Data";
+            this.label27.Text = "Destination Data";
             this.label27.Visible = false;
+            // 
+            // LongitudeNewTextBox
+            // 
+            this.LongitudeNewTextBox.Font = new System.Drawing.Font("Segoe WP Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LongitudeNewTextBox.Location = new System.Drawing.Point(658, 173);
+            this.LongitudeNewTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.LongitudeNewTextBox.MaxLength = 20;
+            this.LongitudeNewTextBox.Name = "LongitudeNewTextBox";
+            this.LongitudeNewTextBox.Size = new System.Drawing.Size(148, 39);
+            this.LongitudeNewTextBox.TabIndex = 27;
+            // 
+            // LatitudeNewTextBox
+            // 
+            this.LatitudeNewTextBox.Font = new System.Drawing.Font("Segoe WP Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LatitudeNewTextBox.Location = new System.Drawing.Point(413, 178);
+            this.LatitudeNewTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.LatitudeNewTextBox.MaxLength = 20;
+            this.LatitudeNewTextBox.Name = "LatitudeNewTextBox";
+            this.LatitudeNewTextBox.Size = new System.Drawing.Size(148, 39);
+            this.LatitudeNewTextBox.TabIndex = 28;
             // 
             // MainForm
             // 
@@ -1619,5 +1644,7 @@
         private System.Windows.Forms.TextBox LatitudeCurrentTextBox;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.TextBox LatitudeNewTextBox;
+        private System.Windows.Forms.TextBox LongitudeNewTextBox;
     }
 }
