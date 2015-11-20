@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Convert.cs" />
     <Compile Include="GPSDataProcessing.cs" />
     <Compile Include="PayloadModels\DroneControlMessage.cs" />
     <Compile Include="PayloadModels\DroneDataMessage.cs" />

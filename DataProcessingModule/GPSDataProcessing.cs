@@ -78,21 +78,46 @@ namespace DataProcessingModule
 
         public GPSData GetIntermediatePoint(GPSData source, GPSData destination, double fraction)
         {
-            //GPSData sourceInRadians = new GPSData() { Latitude = GPSData.ToRadians(source.Latitude), Longitude = GPSData.ToRadians(source.Longitude), Elevation = source.Elevation };
-            //GPSData destinationInRadians = new GPSData() { Latitude = GPSData.ToRadians(destination.Latitude), Longitude = GPSData.ToRadians(destination.Longitude), Elevation = source.Elevation };
+            GPSData sourceInRadians = new GPSData() { Latitude = GPSData.ToRadians(source.Latitude), Longitude = GPSData.ToRadians(source.Longitude), Elevation = source.Elevation };
+            GPSData destinationInRadians = new GPSData() { Latitude = GPSData.ToRadians(destination.Latitude), Longitude = GPSData.ToRadians(destination.Longitude), Elevation = source.Elevation };
 
-            //var distance = GetHaversineDistance(source, destination);
-            //var a = Math.Sin((1 - fraction) * distance / R) / Math.Sin(distance / R);
-            //var b = Math.Sin(fraction - (distance / R)) / Math.Sin(distance / R);
-            //var x = (a * Math.Cos(sourceInRadians.Latitude)) * 
-            GPSData interPoint = new GPSData();
+            var distance = GetHaversineDistance(source, destination);
+            var a = Math.Sin((1 - fraction) * distance / R) / Math.Sin(distance / R);
+            var b = Math.Sin(fraction - (distance / R)) / Math.Sin(distance / R);
+            var x = (a * Math.Cos(sourceInRadians.Latitude) * Math.Cos(sourceInRadians.Longitude)) + (b * Math.Cos(destinationInRadians.Latitude) * Math.Cos(destinationInRadians.Longitude));
+            var y = (a * Math.Cos(sourceInRadians.Latitude) * Math.Sin(sourceInRadians.Longitude)) + (b * Math.Cos(destinationInRadians.Latitude) * Math.Sin(destinationInRadians.Longitude));
+            var z = (a * Math.Sin(sourceInRadians.Latitude)) + (b * Math.Sin(destinationInRadians.Latitude));
+
+            var lat = Math.Atan2(z, Math.Sqrt((x * x) + (y * y)));
+            var longit = Math.Atan2(y, x);
+            GPSData interPoint = new GPSData() { Latitude = GPSData.ToAngle(lat), Longitude = GPSData.ToAngle(longit)};
 
             return interPoint;
         }
 
         public double GetCurrentDeviationFromNorth(MagnetoData current)
         {
-            return Angle;
+            if(current.MY > 0)
+            {
+                return ((90 - GPSData.ToAngle(Math.Atan(current.MX / current.MY))) + current.Declination);
+
+            }
+            else if(current.MY > 0)
+            {
+                return ((270 - GPSData.ToAngle(Math.Atan(current.MX / current.MY))) + current.Declination);
+
+            }
+            else
+            {
+                if(current.MX < 0)
+                {
+                    return 180 + current.Declination;
+                }
+                else
+                {
+                    return 0 + current.Declination;
+                }
+            }            
         }
 
     }

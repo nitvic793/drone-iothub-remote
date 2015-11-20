@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{D557470D-B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeviceExplorer", "DeviceExplorer\DeviceExplorer.csproj", "{6EC48194-96D3-4B82-976D-F7957AF58AC4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataProcessingModule", "DataProcessingModule\DataProcessingModule.csproj", "{8A635B17-7171-406E-B641-C390EA3C94DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,18 @@ Global
 		{6EC48194-96D3-4B82-976D-F7957AF58AC4}.Release|x64.Build.0 = Release|Any CPU
 		{6EC48194-96D3-4B82-976D-F7957AF58AC4}.Release|x86.ActiveCfg = Release|Any CPU
 		{6EC48194-96D3-4B82-976D-F7957AF58AC4}.Release|x86.Build.0 = Release|Any CPU
+		{8A635B17-7171-406E-B641-C390EA3C94DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A635B17-7171-406E-B641-C390EA3C94DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A635B17-7171-406E-B641-C390EA3C94DE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8A635B17-7171-406E-B641-C390EA3C94DE}.Debug|x64.Build.0 = Debug|Any CPU
+		{8A635B17-7171-406E-B641-C390EA3C94DE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8A635B17-7171-406E-B641-C390EA3C94DE}.Debug|x86.Build.0 = Debug|Any CPU
+		{8A635B17-7171-406E-B641-C390EA3C94DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A635B17-7171-406E-B641-C390EA3C94DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A635B17-7171-406E-B641-C390EA3C94DE}.Release|x64.ActiveCfg = Release|Any CPU
+		{8A635B17-7171-406E-B641-C390EA3C94DE}.Release|x64.Build.0 = Release|Any CPU
+		{8A635B17-7171-406E-B641-C390EA3C94DE}.Release|x86.ActiveCfg = Release|Any CPU
+		{8A635B17-7171-406E-B641-C390EA3C94DE}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
